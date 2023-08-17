@@ -21,7 +21,7 @@ export default function RootLayout({
       <body
         className={classNames(
           inter.className,
-          "bg-zinc-600/90 text-amber-50 h-screen"
+          "bg-zinc-600/90 text-amber-50 h-full min-h-screen"
         )}
       >
         <main className="py-10 mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
