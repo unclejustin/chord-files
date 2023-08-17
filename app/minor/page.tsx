@@ -63,27 +63,27 @@ export default function Home() {
       </div>
 
       <section className="border border-zinc-500 border-dashed rounded-lg p-3 grid grid-cols-5 justify-items-center items-center">
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           <Note>
             {getNote({ note: key, position: positions.tritone, notes })}°
           </Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           <Note>
             {getNote({ note: key, position: positions.major6th, notes })}°
           </Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           <Note>
             {getNote({ note: key, position: positions.tonic, notes })}°
           </Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           <Note>
             {getNote({ note: key, position: positions.minor3rd, notes })}°
           </Note>
         </div>
-        <div className="border border-dashed rounded-lg py-1 px-2">
+        <div className="flex flex-col sm:flex-row sm:gap-2 border border-dashed rounded-lg py-1 px-2">
           bII
           <Note>
             {getNote({ note: key, position: positions.minor2nd, notes })}
@@ -100,25 +100,25 @@ export default function Home() {
       </h3>
 
       <section className="border border-zinc-400 rounded-lg p-3 grid grid-cols-7 justify-items-center">
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           i <Note>{tonic}m</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           bIII <Note>{minor3rd}+</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           iv <Note>{perfect4th}m</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           bVI <Note>{minor6th}</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           V <Note>{perfect5th}7</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           #vii <Note>{major7th}°</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           ii <Note>{major2nd}°</Note>
         </div>
       </section>
@@ -132,22 +132,22 @@ export default function Home() {
       </h3>
 
       <section className="border border-zinc-400 rounded-lg p-3 grid grid-cols-6 justify-items-center">
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           <Note>
             {getNote({ note: key, position: positions.minor7th, notes })}°
           </Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           <Note>
             {getNote({ note: key, position: positions.minor2nd, notes })}°
           </Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           <Note>
             {getNote({ note: key, position: positions.major3rd, notes })}°
           </Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           <Note>
             {getNote({ note: key, position: positions.perfect5th, notes })}°
           </Note>

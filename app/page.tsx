@@ -57,22 +57,22 @@ export default function Home() {
       </h3>
 
       <section className="border border-zinc-500 border-dashed rounded-lg p-3 grid grid-cols-6 justify-items-center">
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           VI <Note>{getFifth(tonic)}7</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           Vvi <Note>{getFifth(major6th)}7</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           VIV <Note>{getFifth(perfect4th)}7</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           Vii <Note>{getFifth(major2nd)}7</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           VV <Note>{getFifth(perfect5th)}7</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           Viii <Note>{getFifth(major3rd)}7</Note>
         </div>
       </section>
@@ -86,22 +86,22 @@ export default function Home() {
       </h3>
 
       <section className="border border-zinc-400 rounded-lg p-3 grid grid-cols-6 justify-items-center">
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           I <Note>{tonic}</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           vi <Note>{major6th}m</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           IV <Note>{perfect4th}</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           ii <Note>{major2nd}m</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           V <Note>{perfect5th}</Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           iii <Note>{major3rd}m</Note>
         </div>
       </section>
@@ -115,25 +115,25 @@ export default function Home() {
       </h3>
 
       <section className="border border-zinc-400 rounded-lg p-3 grid grid-cols-6 justify-items-center">
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           bIII{" "}
           <Note>
             {getNote({ note: key, position: positions.major3rd - 1, notes })}
           </Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           bVI{" "}
           <Note>
             {getNote({ note: key, position: positions.major6th - 1, notes })}
           </Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           vi{" "}
           <Note>
             {getNote({ note: key, position: positions.perfect4th, notes })}m
           </Note>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row sm:gap-2">
           bVII{" "}
           <Note>
             {getNote({ note: key, position: positions.major7th, notes })}
