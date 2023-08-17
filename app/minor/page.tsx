@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { flats, sharps, keys, positions, getNote } from "./constants";
+import { flats, sharps, getNote, positions, keys } from "../constants";
 
 export default function Home() {
   const [key, setKey] = useState("C");
@@ -9,7 +9,7 @@ export default function Home() {
   const notes = isFlat ? flats : sharps;
 
   const tonic = getNote({ note: key, position: positions.tonic, notes });
-  const major6th = getNote({ note: key, position: positions.major6th, notes });
+  const minor6th = getNote({ note: key, position: positions.minor6th, notes });
   const perfect4th = getNote({
     note: key,
     position: positions.perfect4th,
@@ -21,7 +21,8 @@ export default function Home() {
     position: positions.perfect5th,
     notes,
   });
-  const major3rd = getNote({ note: key, position: positions.major3rd, notes });
+  const minor3rd = getNote({ note: key, position: positions.minor3rd, notes });
+  const major7th = getNote({ note: key, position: positions.major7th, notes });
 
   const getFifth = (note: string) =>
     getNote({ note, position: positions.perfect5th, notes });
@@ -49,31 +50,44 @@ export default function Home() {
       </select>
 
       <h2 className="uppercase text-sm leading-10 tracking-wider drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)]">
-        Secondary Dominants:
+        Secondary Diminished V:
       </h2>
 
-      <h3 className="mb-1 uppercase text-xs drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)]">
-        Down to note directly beneath
-      </h3>
+      <div className="grid grid-cols-2">
+        <h3 className="mb-1 uppercase text-xs drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)]">
+          Down to the V only
+        </h3>
+        <h3 className="mb-1 uppercase text-xs drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)] text-right">
+          Neapolitan 6th
+        </h3>
+      </div>
 
-      <section className="border border-zinc-500 border-dashed rounded-lg p-3 grid grid-cols-6 justify-items-center">
+      <section className="border border-zinc-500 border-dashed rounded-lg p-3 grid grid-cols-5 justify-items-center items-center">
         <div>
-          VI <Note>{getFifth(tonic)}7</Note>
+          <Note>
+            {getNote({ note: key, position: positions.tritone, notes })}°
+          </Note>
         </div>
         <div>
-          Vvi <Note>{getFifth(major6th)}7</Note>
+          <Note>
+            {getNote({ note: key, position: positions.major6th, notes })}°
+          </Note>
         </div>
         <div>
-          VIV <Note>{getFifth(perfect4th)}7</Note>
+          <Note>
+            {getNote({ note: key, position: positions.tonic, notes })}°
+          </Note>
         </div>
         <div>
-          Vii <Note>{getFifth(major2nd)}7</Note>
+          <Note>
+            {getNote({ note: key, position: positions.minor3rd, notes })}°
+          </Note>
         </div>
-        <div>
-          VV <Note>{getFifth(perfect5th)}7</Note>
-        </div>
-        <div>
-          Viii <Note>{getFifth(major3rd)}7</Note>
+        <div className="border border-dashed rounded-lg py-1 px-2">
+          bII
+          <Note>
+            {getNote({ note: key, position: positions.minor2nd, notes })}
+          </Note>
         </div>
       </section>
 
@@ -85,58 +99,57 @@ export default function Home() {
         Up or down to any
       </h3>
 
-      <section className="border border-zinc-400 rounded-lg p-3 grid grid-cols-6 justify-items-center">
+      <section className="border border-zinc-400 rounded-lg p-3 grid grid-cols-7 justify-items-center">
         <div>
-          I <Note>{tonic}</Note>
+          i <Note>{tonic}m</Note>
         </div>
         <div>
-          vi <Note>{major6th}m</Note>
+          bIII <Note>{minor3rd}+</Note>
         </div>
         <div>
-          IV <Note>{perfect4th}</Note>
+          iv <Note>{perfect4th}m</Note>
         </div>
         <div>
-          ii <Note>{major2nd}m</Note>
+          bVI <Note>{minor6th}</Note>
         </div>
         <div>
-          V <Note>{perfect5th}</Note>
+          V <Note>{perfect5th}7</Note>
         </div>
         <div>
-          iii <Note>{major3rd}m</Note>
+          #vii <Note>{major7th}°</Note>
+        </div>
+        <div>
+          ii <Note>{major2nd}°</Note>
         </div>
       </section>
 
       <h2 className="uppercase text-sm leading-10 tracking-wider drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)]">
-        Modal Interchange:
+        Secondary Diminished iv bVI:
       </h2>
 
-      <h3 className="mb-1 uppercase text-xs drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)]">
-        Up to only I, IV or V
+      <h3 className="mb-1 text-xs drop-shadow-[2px_2px_0_rgba(0,0,0,0.4)]">
+        <span className="uppercase">Up to only</span> iv OR bVI
       </h3>
 
       <section className="border border-zinc-400 rounded-lg p-3 grid grid-cols-6 justify-items-center">
         <div>
-          bIII{" "}
           <Note>
-            {getNote({ note: key, position: positions.major3rd - 1, notes })}
+            {getNote({ note: key, position: positions.minor7th, notes })}°
           </Note>
         </div>
         <div>
-          bVI{" "}
           <Note>
-            {getNote({ note: key, position: positions.major6th - 1, notes })}
+            {getNote({ note: key, position: positions.minor2nd, notes })}°
           </Note>
         </div>
         <div>
-          vi{" "}
           <Note>
-            {getNote({ note: key, position: positions.perfect4th, notes })}m
+            {getNote({ note: key, position: positions.major3rd, notes })}°
           </Note>
         </div>
         <div>
-          bVII{" "}
           <Note>
-            {getNote({ note: key, position: positions.major7th, notes })}
+            {getNote({ note: key, position: positions.perfect5th, notes })}°
           </Note>
         </div>
       </section>
@@ -147,12 +160,17 @@ export default function Home() {
 
       <section className="border border-zinc-400 rounded-lg p-3">
         <ul>
-          <li className="py-1">I V vi IV</li>
-          <li className="py-1">I IV V</li>
-          <li className="py-1">I vi IV V</li>
-          <li className="py-1">I IV vi V</li>
-          <li className="py-1">I V vi iii IV I IV V (Pachebel)</li>
-          <li className="py-1">I III IV iv</li>
+          <li className="py-1">i-VI-III-VII</li>
+          <li className="py-1">i- iv-i-VI-V7-i</li>
+          <li className="py-1">i-iv-v</li>
+          <li className="py-1">i-VI-III-iv</li>
+          <li className="py-1">ii dim-v-i</li>
+          <li className="py-1">i-ii dim-v-i</li>
+          <li className="py-1">i-VII-VI</li>
+          <li className="py-1">i-VII-VI-v</li>
+          <li className="py-1">i-iv-III-VI</li>
+          <li className="py-1">i-iv-VI-v</li>
+          <li className="py-1">VI-VII-i</li>
         </ul>
       </section>
     </>
