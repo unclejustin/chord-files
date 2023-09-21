@@ -25,14 +25,17 @@ export default function RootLayout({
         )}
       >
         <main className="py-10 mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="p-3 border border-zinc-700 rounded-lg">
-            Major
+          <Link
+            href="/chord-files/major"
+            className="p-3 border border-zinc-700 rounded-lg"
+          >
+            CF | Major
           </Link>
           <Link
-            href="/minor"
+            href="/chord-files/minor"
             className="ml-3 p-3 border border-zinc-700 rounded-lg"
           >
-            Minor
+            CF | Minor
           </Link>
           <section className="pt-5">{children}</section>
         </main>
